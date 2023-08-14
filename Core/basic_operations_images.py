@@ -27,4 +27,11 @@ print('Pixels in the Image: ', img.size)
 # large number of errors in OpenCV-Python code are caused by invalid datatype.
 print(img.dtype)
 
+# split is costly operation in terms of time!--
+b, g, r = cv.split(img)
+cv.imshow('green by split method', g)
 
+# Here's the alternative for split!
+b = img[:, :, 0]
+cv.imshow('Blue by slicing the array', b)
+cv.waitKey(0)
